@@ -3,7 +3,7 @@
    * [1.2 启动]()
       * [1.2.1 Kickoff](xphoto/kickoff.md)
       * [1.2.2 Design](xphoto/design.md)
-* [2. 事件](catchup/README.md)
-    * [2.1 小组](catchup/team.md)
+* [2. 事件]()
+    * [2.1 小组](catchup/1.team.md)
 * [3. 关于](xphoto/README.md)
       
