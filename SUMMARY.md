@@ -4,6 +4,6 @@
       * [1.2.1 Kickoff](xphoto/kickoff.md)
       * [1.2.2 Design](xphoto/design.md)
 * [2. 事件]()
-    * [2.1 小组catchup-1](catchup/1.team.md)
-    * [2.2 小组catchup-2](catchup/2.kickoff.md)
+    * [2.1 小组catchup-1](catchup/1.md)
+    * [2.2 小组catchup-2](catchup/2.md)
 * [3. 关于](xphoto/README.md)
