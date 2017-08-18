@@ -8,4 +8,7 @@
     * [2.1 小组catchup-1](catchup/1.md)
     * [2.2 小组catchup-2](catchup/2.md)
     * [2.3 小组catchup-3](catchup/3.md)
+    * [2.4 小组catchup-4](catchup/4.md)
+    * [2.5 小组catchup-5](catchup/5.md)
+    * [2.6 小组catchup-6](catchup/6.md)
 * [3. 关于](xphoto/README.md)
