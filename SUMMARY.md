@@ -4,6 +4,7 @@
       * [1.2.1 Kickoff](xphoto/kickoff.md)
       * [1.2.2 Design](xphoto/design.md)
       * [1.2.3 Schedule](xphoto/schedule.md)
+      * [1.2.4 API](xphoto/api.md)
 * [2. 事件]()
     * [2.1 小组catchup-1](catchup/1.md)
     * [2.2 小组catchup-2](catchup/2.md)
