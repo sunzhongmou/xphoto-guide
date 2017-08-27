@@ -1,6 +1,8 @@
 #注意！
 **除了'/signup', '/signin', '/active_account'这三个接口不需要携带JWTToken，其他所有接口必须携带！**
 
+格式为【Authorization: 'Bearer ' + *JWTToken* 】
+
 注册流程：注册——激活——登录
 
 #注册
@@ -11,20 +13,20 @@ POST '/signup'
 * password
 * repeat_password
 
-##错误返回
+####正确返回
+
+```
+{
+    "success": "欢迎加入 xphoto！我们已给您的注册邮箱发送了一封邮件，请点击里面的链接来激活您的帐号。"
+}
+```
+
+####错误返回
 错误码：422
 
 ```
 {
     "error": "用户名或邮箱已被使用。"
-}
-```
-
-##正确返回
-
-```
-{
-    "success": "欢迎加入 xphoto！我们已给您的注册邮箱发送了一封邮件，请点击里面的链接来激活您的帐号。"
 }
 ```
 
@@ -35,7 +37,15 @@ GET '/active_account'
 * key
 * username
 
-##错误返回
+还有key错误，账号错误，帐号已经是激活状态，但返回相同
+####正确返回
+```
+{
+	"success":"帐号已被激活，请登录"
+}
+```
+
+####错误返回
 错误码：422
 
 如果已激活
@@ -43,13 +53,6 @@ GET '/active_account'
 ```
 {
     "error": "帐号已经是激活状态。"
-}
-```
-还有key错误，账号错误，帐号已经是激活状态，但返回相同
-##正确返回
-```
-{
-	"success":"帐号已被激活，请登录"
 }
 ```
 
@@ -60,7 +63,15 @@ POST '/signin'
 * username/email
 * password
 
-##错误返回
+####正确返回
+```
+{
+    "success": "登录成功！",
+    "JWTToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDA4MDY0OTB9.CdkQHo5ur72eVLYRjuWmEyxXIUrK7LMmiE3KBdNQoA0"
+}
+```
+
+####错误返回
 ```
 {
     "error": "此帐号还没有被激活，激活链接已发送到 282503846@qq.com 邮箱，请查收。"
@@ -74,13 +85,6 @@ POST '/signin'
 ```
 .....
 
-##正确返回
-```
-{
-    "success": "登录成功！",
-    "JWTToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MDA4MDY0OTB9.CdkQHo5ur72eVLYRjuWmEyxXIUrK7LMmiE3KBdNQoA0"
-}
-```
 
 #注销
 由于JWT是前端保存身份信息的方式，服务器无法让Token在过期时间内失效，或者令客户端删除JWTToken，所以有如下方式可解决。
@@ -94,9 +98,7 @@ POST '/signin'
 
 GET '/userInfo'
 
-**注意！ Header中一定要加上Authorization，值为 'Bearer ' + JWTToken**
-
-##正确返回
+####正确返回
 ```
 {
     "id": "xxxxxxxxxxx",
@@ -109,16 +111,16 @@ GET '/userInfo'
 #上传图片
 POST '/upload'
 
-##正确返回
+####正确返回
 ```
 {
-    "url": [
+    "urls": [
         "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1fff52e57e1c8b59.png",
         "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1ffxxxxxxxx.png"
     ]
 }
 ```
-##错误返回
+####错误返回
 ```
 {
     "error": "File format must be png or jpg!"
@@ -133,7 +135,7 @@ POST '/upload'
 #获取用户所有的图片
 GET '/images'
 
-##正确返回
+####正确返回
 ```
 {
     "urls": [
@@ -143,7 +145,7 @@ GET '/images'
 }
 ```
 
-##错误返回
+####错误返回
 ```
 {
     "error": "there is no image about userId: xxx"
