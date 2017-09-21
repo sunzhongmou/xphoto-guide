@@ -13,4 +13,5 @@
     * [2.5 小组catchup-5](catchup/5.md)
     * [2.6 小组catchup-6](catchup/6.md)
     * [2.7 小组catchup-7](catchup/7.md)
+    * [2.8 小组catchup-8](catchup/8.md)
 * [3. 关于](xphoto/README.md)
