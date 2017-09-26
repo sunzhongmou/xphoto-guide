@@ -152,6 +152,42 @@ GET '/images'
 }
 ```
 
+#注册人脸库
+POST '/images-db
+
+{"file": ["file1", "file2"]}
+
+####正确返回
+返回码201
+```
+{
+    "faceDbId": "1"
+}
+```
+
+#从人脸库中查找
+POST '/images?search
+
+{"faceFile": "faceFile1"}
+
+####正确返回
+返回码200
+```
+{
+    "matchedImageUrls": [
+       "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1fff52e57e1c8b59.png",
+       "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1ffxxxxxxxx.png"
+    ]
+}
+```
+
+返回码404
+```
+{
+    "error": "there is no image matched"
+}
+```
+
 #全局异常
 异常处理没有涵盖到的异常、参数不全导致的库调用异常统一格式、未知异常：
 
