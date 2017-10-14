@@ -161,12 +161,12 @@ POST '/images-db
 返回码201
 ```
 {
-    "faceDbId": "1"
+    "message": "register success!"
 }
 ```
 
 #从人脸库中查找
-POST '/images?search
+POST '/images-db/?search
 
 {"faceFile": "faceFile1"}
 
@@ -174,17 +174,14 @@ POST '/images?search
 返回码200
 ```
 {
-    "matchedImageUrls": [
-       "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1fff52e57e1c8b59.png",
-       "http://little7-1252484566.cosgz.myqcloud.com/7212da46a42ba9af1ffxxxxxxxx.png"
-    ]
+    "isInterested": true
 }
 ```
 
 返回码404
 ```
 {
-    "error": "there is no image matched"
+    "isInterested": false
 }
 ```
 
